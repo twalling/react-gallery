@@ -8,6 +8,7 @@
 
 # production
 /build
+/build-functions
 
 # misc
 .DS_Store
