@@ -36,7 +36,7 @@ class App extends Component {
 
     // Get the photos for beaches, mountains, and lakes
     getPhotos = (tag, photos) => {
-        axios.get(`http://localhost:9000/photos?method=flickr.photos.search&tags=${tag}&sort=relevance&per_page=24&format=json&nojsoncallback=1`)
+        axios.get(`/photos?method=flickr.photos.search&tags=${tag}&sort=relevance&per_page=24&format=json&nojsoncallback=1`)
         .then(response => {
             this.setState({
                 [photos]: response.data.photos.photo
@@ -57,7 +57,7 @@ class App extends Component {
         });
         // If there is a query, fetch the data from Flickr
         if (query) {
-            axios.get(`http://localhost:9000/photos?method=flickr.photos.search&tags=${query}&sort=relevance&per_page=24&format=json&nojsoncallback=1`)
+            axios.get(`/photos?method=flickr.photos.search&tags=${query}&sort=relevance&per_page=24&format=json&nojsoncallback=1`)
             .then(response => {
                 this.setState({
                     showResults: response.data.photos.photo.length > 0,
